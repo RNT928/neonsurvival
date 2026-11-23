@@ -4814,6 +4814,433 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+        .tn-intro {
+            margin-bottom: 16px;
+            color: var(--dim);
+        }
+
+        .tn-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 14px;
+        }
+
+        .tn-card {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 16px 18px;
+            text-align: left;
+            background: #121819;
+            border: 1px solid #2a3533;
+            border-left: 4px solid var(--dim);
+            transition: border-color 0.15s, background 0.15s, transform 0.15s;
+        }
+
+        .tn-card.open {
+            border-left-color: var(--green);
+        }
+
+        .tn-card.ongoing {
+            border-left-color: var(--cyan);
+        }
+
+        .tn-card.upcoming {
+            border-left-color: var(--gold);
+        }
+
+        .tn-card:hover {
+            border-color: var(--cyan);
+            background: rgba(0, 255, 204, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .tn-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .tn-name {
+            display: block;
+            font-family: var(--display);
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .tn-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 14px;
+            font-size: 15px;
+            color: var(--dim);
+        }
+
+        .tn-when {
+            display: block;
+            font-family: var(--display);
+            font-size: 13px;
+            color: var(--cyan);
+        }
+
+        .tn-in {
+            display: block;
+            font-family: var(--display);
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            color: var(--green);
+        }
+
+        .tn-prize {
+            display: block;
+            margin-top: auto;
+            padding-top: 10px;
+            border-top: 1px dashed #2a3533;
+            font-size: 14px;
+            color: var(--dim);
+        }
+
+        .tn-prize b {
+            color: var(--gold);
+        }
+
+        .tn-kind,
+        .tn-state {
+            display: inline-block;
+            padding: 2px 9px;
+            font-family: var(--display);
+            font-size: 11px;
+            letter-spacing: 0.05em;
+            color: var(--dim);
+            border: 1px solid var(--line);
+        }
+
+        .tn-state.open {
+            color: var(--green);
+            border-color: rgba(0, 255, 85, 0.4);
+        }
+
+        .tn-state.ongoing {
+            color: var(--cyan);
+            border-color: var(--cyan);
+        }
+
+        .tn-state.upcoming {
+            color: var(--gold);
+            border-color: rgba(255, 255, 0, 0.4);
+        }
+
+        .tn-state.finished {
+            color: var(--red);
+            border-color: rgba(255, 0, 85, 0.4);
+        }
+
+        .tn-bar {
+            margin-bottom: 16px;
+        }
+
+        .tn-top {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .tn-info,
+        .tn-act {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 18px 20px;
+            background: #0f1517;
+            border: 1px solid var(--line);
+        }
+
+        .tn-info h3 {
+            font-size: 26px;
+            color: #fff;
+        }
+
+        .tn-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tn-clock {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-top: auto;
+        }
+
+        .tn-clock small,
+        .tn-clock span {
+            font-size: 14px;
+            color: var(--dim);
+        }
+
+        .tn-clock b {
+            font-family: var(--display);
+            font-size: 30px;
+            color: var(--cyan);
+            text-shadow: 0 0 10px var(--cyan);
+        }
+
+        .tn-act h4 {
+            font-size: 15px;
+            color: var(--cyan);
+        }
+
+        .tn-act p {
+            font-size: 15px;
+            color: var(--dim);
+        }
+
+        .tn-act .cta,
+        .tn-act .ghost {
+            align-self: flex-start;
+        }
+
+        .tn-pick,
+        .tn-team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tn-mate {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            font-weight: 600;
+            background: #121819;
+            border: 1px solid #2a3533;
+        }
+
+        .tn-mate:hover:not(:disabled) {
+            border-color: var(--cyan);
+        }
+
+        .tn-mate.on {
+            border-color: var(--cyan);
+            background: rgba(0, 255, 204, 0.09);
+        }
+
+        .tn-mate:disabled:not(.on) {
+            opacity: 0.45;
+        }
+
+        .tn-team span {
+            padding: 6px 12px;
+            font-weight: 600;
+            background: #121819;
+            border: 1px solid #2a3533;
+        }
+
+        .tn-team span.me {
+            color: var(--cyan);
+            border-color: var(--cyan);
+        }
+
+        .tn-note {
+            margin-bottom: 18px;
+            padding: 12px 16px;
+            font-size: 16px;
+            color: var(--ink);
+            background: rgba(0, 255, 204, 0.07);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--cyan);
+        }
+
+        .tn-note.gold {
+            background: rgba(255, 255, 0, 0.06);
+            border-color: rgba(255, 255, 0, 0.35);
+            border-left-color: var(--gold);
+        }
+
+        .tn-note.live {
+            background: rgba(255, 0, 85, 0.08);
+            border-color: rgba(255, 0, 85, 0.4);
+            border-left-color: var(--red);
+        }
+
+        .tn-sec {
+            margin-bottom: 12px;
+            font-size: 15px;
+            letter-spacing: 0.05em;
+            color: var(--cyan);
+        }
+
+        .tn-rewards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .tn-rw {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 12px 14px;
+            background: #121819;
+            border: 1px solid #2a3533;
+            border-top: 3px solid var(--gold);
+        }
+
+        .tn-rw small {
+            font-size: 13px;
+            color: var(--dim);
+        }
+
+        .tn-rw span {
+            font-size: 15px;
+        }
+
+        .tn-rw .tn-cr {
+            font-family: var(--display);
+            font-size: 16px;
+            color: var(--gold);
+        }
+
+        .tn-rw .tn-none {
+            color: var(--faint);
+        }
+
+        .tn-champ {
+            margin-bottom: 14px;
+            padding: 12px 16px;
+            font-family: var(--display);
+            font-size: 16px;
+            color: var(--gold);
+            text-shadow: 0 0 10px var(--gold);
+            background: rgba(255, 255, 0, 0.06);
+            border: 1px solid rgba(255, 255, 0, 0.35);
+        }
+
+        .tn-scroll {
+            overflow-x: auto;
+            padding-bottom: 12px;
+        }
+
+        .tn-bracket {
+            display: flex;
+            gap: 26px;
+            min-width: min-content;
+        }
+
+        .tn-round {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: none;
+            width: 210px;
+        }
+
+        .tn-round h5 {
+            font-family: var(--display);
+            font-size: 12px;
+            letter-spacing: 0.06em;
+            color: var(--dim);
+        }
+
+        .tn-matches {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 12px;
+        }
+
+        .tn-match {
+            display: flex;
+            flex-direction: column;
+            background: #121819;
+            border: 1px solid #2a3533;
+        }
+
+        .tn-match.ready {
+            border-color: rgba(255, 255, 0, 0.5);
+        }
+
+        .tn-match.live {
+            border-color: var(--red);
+            box-shadow: 0 0 12px rgba(255, 0, 85, 0.3);
+        }
+
+        .tn-match.mine {
+            border-left: 4px solid var(--cyan);
+        }
+
+        .tn-slot {
+            padding: 7px 12px;
+            overflow: hidden;
+            font-size: 16px;
+            font-weight: 600;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .tn-slot + .tn-slot {
+            border-top: 1px solid #1d2624;
+        }
+
+        .tn-slot.win {
+            color: var(--green);
+            background: rgba(0, 255, 85, 0.07);
+        }
+
+        .tn-slot.lose {
+            color: var(--faint);
+            text-decoration: line-through;
+        }
+
+        .tn-slot.me {
+            color: var(--cyan);
+        }
+
+        .tn-slot.win.me {
+            color: var(--green);
+        }
+
+        .tn-slot.tbd {
+            font-weight: 400;
+            color: var(--faint);
+        }
+
+        .tn-tag {
+            padding: 3px 12px;
+            font-family: var(--display);
+            font-size: 10px;
+            letter-spacing: 0.06em;
+            color: var(--dim);
+            border-top: 1px solid #1d2624;
+        }
+
+        .tn-match.live .tn-tag {
+            color: var(--red);
+        }
+
+        .tn-match.ready .tn-tag {
+            color: var(--gold);
+        }
+
+        @media (max-width: 760px) {
+            .tn-top {
+                grid-template-columns: 1fr;
+            }
+
+            .tn-rewards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tn-list {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -5146,6 +5573,18 @@
             </footer>
         </section>
 
+        <section class="panel" id="p-tournaments" aria-label="Tournaments">
+            <header class="panel-head">
+                <h2>TOURNAMENTS</h2>
+                <button class="x" data-act="close" aria-label="Close">&times;</button>
+            </header>
+            <div class="panel-body" id="tn-root"></div>
+            <footer class="panel-foot">
+                <button class="ghost sm" data-act="open" data-panel="play">&larr; Back</button>
+                <button class="ghost sm" data-act="tn-refresh">Refresh</button>
+            </footer>
+        </section>
+
         <section class="panel" id="p-play" aria-label="Play">
             <header class="panel-head">
                 <h2>PLAY</h2>
@@ -5165,9 +5604,10 @@
                         <span class="tile-rank hidden" id="tile-rank"></span>
                     </button>
 
-                    <button class="play-tile soon" disabled>
+                    <button class="play-tile" data-act="open" data-panel="tournaments">
                         <img src="images/tournaments.jpg" alt="Tournaments">
                         <span class="tile-desc">Brackets and prizes.</span>
+                        <span class="badge hidden" id="tn-badge">0</span>
                     </button>
 
                     <button class="play-tile soon" disabled>
@@ -6303,7 +6743,10 @@
             sock.on('meta', applyMeta);
             sock.on('profile', applyProfile);
             sock.on('friends', applyFriends);
-            sock.on('notify', n => toast(n.text, n.kind || ''));
+            sock.on('notify', n => {
+                toast(n.text, n.kind || '');
+                if (S.panel === 'tournaments' && Date.now() - TN.last > 1000) loadTournaments();
+            });
             sock.on('levelup', d => queueLevelUp(d));
             sock.on('queue:state', applyQueue);
             sock.on('lobby:state', applyLobby);
@@ -6347,6 +6790,7 @@
             else applyQueue(null);
             renderHome();
             loadComp();
+            loadTournaments();
             if (S.panel === 'login') closePanel();
             if (res.match) startMatch(res.match, true);
             else if (G && !G.ended) {
@@ -7980,6 +8424,328 @@
             compClock();
         }
 
+        const TN = { list: null, user: '', error: '', loading: false, sel: '', gone: null, team: [], bracket: null, bracketId: '', busy: false, timer: 0, last: 0 };
+        const TN_MODES = { solo: 'Solo', duo: 'Duos', trio: 'Trios' };
+        const TN_KINDS = { daily: 'Daily', weekly: 'Weekly', seasonal: 'Seasonal', test: 'Test' };
+        const TN_STATES = { upcoming: 'Upcoming', open: 'Registration open', ongoing: 'In progress', finished: 'Finished' };
+        const TN_ORDER = { open: 0, ongoing: 1, upcoming: 2 };
+        const TN_TIERS = [['first', '1st place'], ['second', '2nd place'], ['semifinalist', 'Semifinalists'], ['participation', 'Participation']];
+
+        function tnReset() {
+            TN.list = null;
+            TN.user = '';
+            TN.error = '';
+            TN.sel = '';
+            TN.gone = null;
+            TN.team = [];
+            TN.bracket = null;
+            TN.bracketId = '';
+            TN.busy = false;
+            renderTnBadge();
+        }
+
+        const tnNow = () => compNow();
+        const tnOf = id => (TN.list ? TN.list.find(t => t.id === id) || null : null);
+        const tnCurrent = () => tnOf(TN.sel) || (TN.gone && TN.gone.id === TN.sel ? TN.gone : null);
+        const tnPicked = () => TN.team.filter(n => S.friends.list.some(f => f.username === n));
+
+        function tnCountdown(ms) {
+            const s = Math.max(0, Math.floor(ms / 1000));
+            const p = n => String(n).padStart(2, '0');
+            const days = Math.floor(s / 86400);
+            const rest = `${p(Math.floor(s % 86400 / 3600))}:${p(Math.floor(s % 3600 / 60))}:${p(s % 60)}`;
+            return days ? days + 'd ' + rest : rest;
+        }
+
+        function tnDate(ts) {
+            return new Date(ts).toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+        }
+
+        function tnHuman(id) {
+            return String(id).replace(/^tn_/, '').split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        }
+
+        function tnItemName(slot, id) {
+            const it = slot === 'badge' ? progCat().badges.find(b => b.id === id) : progItem(slot, id);
+            return it && it.name ? it.name : tnHuman(id);
+        }
+
+        function tnRewardList(r) {
+            const out = [];
+            if (r.credits) out.push(fmt(r.credits) + ' credits');
+            if (r.skin) out.push(tnItemName('skin', r.skin) + ' skin');
+            if (r.title) out.push(tnItemName('title', r.title) + ' title');
+            if (r.badge) out.push(tnItemName('badge', r.badge) + ' badge');
+            return out;
+        }
+
+        function tnRewardsHtml(t) {
+            const cells = TN_TIERS.map(([key, label]) => {
+                const parts = tnRewardList((t.rewards && t.rewards[key]) || {});
+                const body = parts.length
+                    ? parts.map((p, i) => `<span class="${i === 0 && /credits$/.test(p) ? 'tn-cr' : ''}">${esc(p)}</span>`).join('')
+                    : '<span class="tn-none">No reward</span>';
+                return `<div class="tn-rw"><small>${label}</small>${body}</div>`;
+            }).join('');
+            return `<div class="tn-rewards">${cells}</div>`;
+        }
+
+        function tnWhenText(t, now) {
+            if (t.status === 'upcoming') return now >= t.registrationOpensAt ? 'Registration opening...' : 'Registration opens in ' + tnCountdown(t.registrationOpensAt - now);
+            if (t.status === 'open') return now >= t.startsAt ? 'Starting...' : 'Starts in ' + tnCountdown(t.startsAt - now);
+            if (t.status === 'ongoing') return 'Bracket in progress';
+            return 'Finished';
+        }
+
+        function tnUnit(t) {
+            return t.teamSize === 1 ? 'players' : 'teams';
+        }
+
+        function tnRoundName(r, total) {
+            const left = total - r;
+            if (left === 1) return 'Final';
+            if (left === 2) return 'Semifinals';
+            if (left === 3) return 'Quarterfinals';
+            return 'Round of ' + Math.pow(2, left);
+        }
+
+        function tnMine(b) {
+            const me = S.profile.username;
+            const entrant = b.entrants.find(e => e.members.includes(me));
+            if (!entrant) return null;
+            if (!b.bracket) return { id: entrant.id, state: 'seated' };
+            if (b.bracket.championId === entrant.id) return { id: entrant.id, state: 'champion' };
+            const matches = b.bracket.rounds.flat().filter(m => m.a === entrant.id || m.b === entrant.id);
+            if (matches.some(m => m.status === 'live')) return { id: entrant.id, state: 'live' };
+            if (matches.some(m => m.status === 'ready')) return { id: entrant.id, state: 'ready' };
+            if (matches.some(m => m.winner && m.winner !== entrant.id)) return { id: entrant.id, state: 'out' };
+            return { id: entrant.id, state: 'waiting' };
+        }
+
+        function tnStateNote(mine) {
+            if (!mine) return '';
+            if (mine.state === 'live') return '<div class="tn-note live">Your match is live.</div>';
+            if (mine.state === 'ready') return '<div class="tn-note gold">Your match is ready. Stay online and out of other matches. It launches as soon as both sides are here, and a no-show forfeits after 3 minutes.</div>';
+            if (mine.state === 'waiting') return '<div class="tn-note">You are through. Waiting for your next opponent.</div>';
+            if (mine.state === 'out') return '<div class="tn-note">You were knocked out. Thanks for playing.</div>';
+            if (mine.state === 'champion') return '<div class="tn-note gold">You are the champion!</div>';
+            return '';
+        }
+
+        function tnSlot(m, side, mineId) {
+            const id = m[side];
+            const name = m[side + 'Name'];
+            const cls = ['tn-slot'];
+            if (id && m.winner === id) cls.push('win');
+            if (id && m.winner && m.winner !== id) cls.push('lose');
+            if (id && id === mineId) cls.push('me');
+            if (!id) cls.push('tbd');
+            return `<span class="${cls.join(' ')}">${id ? esc(name || 'Unknown') : m.bye ? 'Bye' : 'TBD'}</span>`;
+        }
+
+        function tnMatchHtml(m, mineId) {
+            const mine = !!mineId && (m.a === mineId || m.b === mineId);
+            const tag = m.status === 'live' ? 'LIVE' : m.status === 'ready' ? 'READY' : m.bye ? 'BYE' : '';
+            return `<div class="tn-match ${esc(m.status)}${mine ? ' mine' : ''}">${tnSlot(m, 'a', mineId)}${tnSlot(m, 'b', mineId)}${tag ? `<span class="tn-tag">${tag}</span>` : ''}</div>`;
+        }
+
+        function tnBracketHtml(t) {
+            const b = TN.bracketId === t.id ? TN.bracket : null;
+            if (!b) return '<p class="empty">Loading...</p>';
+            if (!b.bracket) {
+                if (t.status === 'finished') return '<p class="empty">This tournament was cancelled because not enough teams entered.</p>';
+                if (!b.entrants.length) return '<p class="empty">Nobody has registered yet. The bracket is drawn when the tournament starts.</p>';
+                return `<div class="list">${b.entrants.map(e => `<div class="row"><div class="grow"><div class="nm">${esc(e.name)}</div><div class="st">${esc(e.members.join(', '))}</div></div></div>`).join('')}</div>`;
+            }
+            const mine = tnMine(b);
+            const mineId = mine ? mine.id : '';
+            const rounds = b.bracket.rounds;
+            const champ = b.bracket.championName ? `<div class="tn-champ">CHAMPION: ${esc(b.bracket.championName)}</div>` : '';
+            const cols = rounds.map((row, r) => `<div class="tn-round"><h5>${esc(tnRoundName(r, rounds.length).toUpperCase())}</h5><div class="tn-matches">${row.map(m => tnMatchHtml(m, mineId)).join('')}</div></div>`).join('');
+            return `${champ}<div class="tn-scroll"><div class="tn-bracket">${cols}</div></div>`;
+        }
+
+        function tnActHtml(t) {
+            const b = TN.bracketId === t.id ? TN.bracket : null;
+            const mine = b ? tnMine(b) : null;
+            const size = t.teamSize;
+            const need = size - 1;
+            if (t.status === 'finished') return '<h4>RESULT</h4><p>This tournament has ended.</p>';
+            if (t.registered) {
+                const me = S.profile.username;
+                const team = `<div class="tn-team">${(t.myTeam || []).map(n => `<span class="${n === me ? 'me' : ''}">${esc(n)}</span>`).join('')}</div>`;
+                const leave = t.status === 'ongoing' ? '' : `<button class="ghost danger" data-act="tn-leave" data-id="${esc(t.id)}" ${TN.busy ? 'disabled' : ''}>Withdraw</button>`;
+                const hint = t.status === 'ongoing' ? '' : `<p>You are in. ${size > 1 ? 'Your teammates must be online when your match starts.' : 'Be online when your match starts.'}</p>`;
+                return `<h4>${size === 1 ? 'YOU ARE REGISTERED' : 'YOUR TEAM'}</h4>${team}${hint}${leave}`;
+            }
+            if (t.status === 'upcoming') return '<h4>REGISTRATION</h4><p>Registration has not opened yet. Come back when the countdown ends.</p>';
+            if (t.status === 'ongoing') return '<h4>REGISTRATION</h4><p>Registration is closed. This tournament is already under way.</p>';
+            if (t.entrantCount >= t.maxEntrants) return '<h4>REGISTRATION</h4><p>This tournament is full.</p>';
+            if (size === 1) return `<h4>REGISTRATION</h4><p>Enter solo. Win every match to take the title.</p><button class="cta cyan" data-act="tn-register" data-id="${esc(t.id)}" ${TN.busy ? 'disabled' : ''}>Register</button>`;
+            const friends = S.friends.list.slice().sort((x, y) => (y.online ? 1 : 0) - (x.online ? 1 : 0));
+            if (friends.length < need) {
+                return `<h4>REGISTRATION</h4><p>${esc(TN_MODES[t.mode] || t.mode)} tournaments need a team of ${size}. You need ${need} friend${need === 1 ? '' : 's'} to enter, and you have ${friends.length}.</p><button class="ghost" data-act="open" data-panel="friends">Open friends</button>`;
+            }
+            const picked = tnPicked();
+            const chips = friends.map(f => {
+                const on = picked.includes(f.username);
+                return `<button class="tn-mate ${on ? 'on' : ''}" data-act="tn-mate" data-user="${esc(f.username)}" ${!on && picked.length >= need ? 'disabled' : ''}><span class="dot ${f.online ? 'on' : ''}"></span>${esc(f.username)}</button>`;
+            }).join('');
+            return `<h4>REGISTRATION</h4><p>Pick ${need} friend${need === 1 ? '' : 's'} for your team, ${picked.length} of ${need} chosen. Your teammates must be online when your match starts.</p><div class="tn-pick">${chips}</div><button class="cta cyan" data-act="tn-register" data-id="${esc(t.id)}" ${picked.length !== need || TN.busy ? 'disabled' : ''}>Register team</button>`;
+        }
+
+        function tnDetail(t) {
+            const size = t.teamSize;
+            const b = TN.bracketId === t.id ? TN.bracket : null;
+            const mine = b && t.registered ? tnMine(b) : null;
+            const note = t.status === 'ongoing' ? tnStateNote(mine) : '';
+            const tagKind = `<span class="tn-kind">${esc(TN_KINDS[t.kind] || 'Event')}</span>`;
+            const tagState = `<span class="tn-state ${esc(t.status)}">${esc(TN_STATES[t.status] || t.status)}</span>`;
+            return `<div class="tn-bar"><button class="ghost sm" data-act="tn-back">&larr; All tournaments</button></div>
+        ${note}
+        <div class="tn-top">
+            <div class="tn-info">
+                <div class="tn-tags">${tagKind}${tagState}</div>
+                <h3>${esc(t.name)}</h3>
+                <div class="tn-meta"><span>${esc(TN_MODES[t.mode] || t.mode)}, ${size} vs ${size}</span><span>${t.entrantCount} / ${t.maxEntrants} ${tnUnit(t)}</span><span>Single elimination</span></div>
+                <div class="tn-clock"><small id="tn-clock-label"></small><b id="tn-clock"></b><span id="tn-clock-date"></span></div>
+            </div>
+            <div class="tn-act">${tnActHtml(t)}</div>
+        </div>
+        <h3 class="tn-sec">PRIZES</h3>
+        ${tnRewardsHtml(t)}
+        <h3 class="tn-sec">${b && b.bracket ? 'BRACKET' : 'ENTRANTS'}</h3>
+        ${tnBracketHtml(t)}`;
+        }
+
+        function tnListHtml() {
+            if (!TN.list.length) return '<p class="empty">No tournaments are scheduled right now. Check back soon.</p>';
+            const cards = TN.list.map(t => {
+                const first = tnRewardList((t.rewards && t.rewards.first) || {});
+                const prize = first.length ? `<span class="tn-prize">Winner gets <b>${esc(first.join(', '))}</b></span>` : '';
+                return `<button class="tn-card ${esc(t.status)}" data-act="tn-open" data-id="${esc(t.id)}">
+            <span class="tn-card-top"><span class="tn-kind">${esc(TN_KINDS[t.kind] || 'Event')}</span><span class="tn-state ${esc(t.status)}">${esc(TN_STATES[t.status] || t.status)}</span></span>
+            <span class="tn-name">${esc(t.name)}</span>
+            <span class="tn-meta"><span>${esc(TN_MODES[t.mode] || t.mode)}, ${t.teamSize} vs ${t.teamSize}</span><span>${t.entrantCount} / ${t.maxEntrants} ${tnUnit(t)}</span></span>
+            <span class="tn-when" data-tn-id="${esc(t.id)}"></span>
+            ${t.registered ? '<span class="tn-in">YOU ARE REGISTERED</span>' : ''}
+            ${prize}
+        </button>`;
+            }).join('');
+            return `<p class="tn-intro">Single elimination brackets. Register before the start, then stay online for your matches. Team events need friends who are online too.</p><div class="tn-list">${cards}</div>`;
+        }
+
+        function renderTournaments() {
+            const root = $('#tn-root');
+            if (!root) return;
+            if (!TN.list) {
+                setHtml(root, TN.error
+                    ? `<p class="empty">${esc(TN.error)}</p><div style="text-align:center;margin-top:16px"><button class="ghost" data-act="tn-refresh">Try again</button></div>`
+                    : '<p class="empty">Loading tournaments...</p>');
+                return;
+            }
+            const t = TN.sel ? tnCurrent() : null;
+            setHtml(root, t ? tnDetail(t) : tnListHtml());
+            tnClock();
+        }
+
+        function renderTnBadge() {
+            const el = $('#tn-badge');
+            if (!el) return;
+            const n = TN.list && S.profile ? TN.list.filter(t => t.status === 'open' && !t.registered).length : 0;
+            setText(el, n);
+            el.classList.toggle('hidden', !n);
+        }
+
+        function tnApply(view) {
+            if (!TN.list || !view) return;
+            TN.list = TN.list.map(t => (t.id === view.id ? view : t));
+            renderTnBadge();
+        }
+
+        function tnClock() {
+            const now = tnNow();
+            $$('[data-tn-id]').forEach(el => {
+                const t = tnOf(el.dataset.tnId);
+                if (t) setText(el, tnWhenText(t, now));
+            });
+            const t = TN.sel ? tnCurrent() : null;
+            const label = $('#tn-clock-label');
+            if (t && label) {
+                let head = 'Status';
+                let value = 'LIVE';
+                let date = 'Started ' + tnDate(t.startsAt);
+                if (t.status === 'upcoming') {
+                    head = 'Registration opens in';
+                    value = tnCountdown(t.registrationOpensAt - now);
+                    date = 'Opens ' + tnDate(t.registrationOpensAt) + ', starts ' + tnDate(t.startsAt);
+                } else if (t.status === 'open') {
+                    head = 'Starts in';
+                    value = tnCountdown(t.startsAt - now);
+                    date = 'Starts ' + tnDate(t.startsAt);
+                } else if (t.status === 'finished') {
+                    value = 'FINISHED';
+                    date = '';
+                }
+                setText(label, head);
+                setText($('#tn-clock'), value);
+                setText($('#tn-clock-date'), date);
+            }
+            if (S.panel !== 'tournaments' || !TN.list) return;
+            const due = TN.list.some(x => (x.status === 'upcoming' && now >= x.registrationOpensAt) || (x.status !== 'ongoing' && now >= x.startsAt));
+            if (Date.now() - TN.last >= (due ? 2500 : 6000)) loadTournaments();
+        }
+
+        function startTnClock() {
+            clearInterval(TN.timer);
+            tnClock();
+            TN.timer = setInterval(() => {
+                if (S.panel !== 'tournaments') {
+                    clearInterval(TN.timer);
+                    TN.timer = 0;
+                    return;
+                }
+                tnClock();
+            }, 1000);
+        }
+
+        async function loadTournaments() {
+            if (!S.profile || TN.loading) return;
+            const user = S.profile.username;
+            if (TN.user !== user) {
+                tnReset();
+                TN.user = user;
+            }
+            TN.loading = true;
+            const r = await request('tournament:list', {});
+            TN.loading = false;
+            TN.last = Date.now();
+            if (!S.profile || S.profile.username !== user) return;
+            if (!r.ok) {
+                TN.error = r.error || 'Could not load tournaments';
+                if (S.panel === 'tournaments') renderTournaments();
+                return;
+            }
+            TN.error = '';
+            const prev = TN.sel ? tnOf(TN.sel) : null;
+            TN.list = r.tournaments.slice().sort((a, b) => (TN_ORDER[a.status] - TN_ORDER[b.status]) || (a.startsAt - b.startsAt));
+            if (prev && !tnOf(prev.id)) TN.gone = Object.assign({}, prev, { status: 'finished' });
+            renderTnBadge();
+            if (S.panel !== 'tournaments') return;
+            renderTournaments();
+            if (TN.sel) loadBracket();
+        }
+
+        async function loadBracket() {
+            const id = TN.sel;
+            if (!id || !tnCurrent()) return;
+            const r = await request('tournament:bracket', { id });
+            if (TN.sel !== id || S.panel !== 'tournaments' || !r.ok) return;
+            TN.bracket = r;
+            TN.bracketId = id;
+            renderTournaments();
+        }
+
         function renderPanel(name) {
             renderQueue();
             if (name === 'modes') renderModes();
@@ -7994,7 +8760,20 @@
             else if (name === 'settings') renderSettings();
             else if (name === 'history') renderHistory();
             else if (name === 'leaderboard') renderLeaderboard();
-            else if (name === 'play') renderPlayTile();
+            else if (name === 'play') {
+                renderPlayTile();
+                renderTnBadge();
+                loadTournaments();
+            } else if (name === 'tournaments') {
+                TN.sel = '';
+                TN.gone = null;
+                TN.team = [];
+                TN.bracket = null;
+                TN.bracketId = '';
+                renderTournaments();
+                loadTournaments();
+                startTnClock();
+            }
             else if (name === 'competitive') {
                 compError = '';
                 renderComp();
@@ -8611,6 +9390,77 @@
             LB.board = 'cr';
             openPanel('leaderboard');
         });
+        act('tn-refresh', async () => {
+            TN.error = '';
+            if (!TN.list) renderTournaments();
+            await loadTournaments();
+        });
+        act('tn-open', d => {
+            if (!tnOf(d.id)) return;
+            TN.sel = d.id;
+            TN.gone = null;
+            TN.team = [];
+            TN.bracket = null;
+            TN.bracketId = '';
+            renderTournaments();
+            loadBracket();
+        });
+        act('tn-back', () => {
+            TN.sel = '';
+            TN.gone = null;
+            TN.team = [];
+            TN.bracket = null;
+            TN.bracketId = '';
+            renderTournaments();
+        });
+        act('tn-mate', d => {
+            const t = tnOf(TN.sel);
+            if (!t) return;
+            const i = TN.team.indexOf(d.user);
+            if (i >= 0) TN.team.splice(i, 1);
+            else if (tnPicked().length < t.teamSize - 1) TN.team.push(d.user);
+            renderTournaments();
+        });
+        act('tn-register', async d => {
+            const t = tnOf(d.id);
+            if (!t || TN.busy) return;
+            const team = tnPicked().slice(0, t.teamSize - 1);
+            if (team.length !== t.teamSize - 1) {
+                toast('Pick ' + (t.teamSize - 1) + ' friend' + (t.teamSize === 2 ? '' : 's') + ' first', 'bad');
+                return;
+            }
+            TN.busy = true;
+            renderTournaments();
+            const r = await request('tournament:register', { id: t.id, team });
+            TN.busy = false;
+            if (!r.ok) {
+                toast(r.error || 'Could not register', 'bad');
+                renderTournaments();
+                return;
+            }
+            tnApply(r.tournament);
+            TN.team = [];
+            toast('You are registered for ' + t.name, 'good');
+            renderTournaments();
+            loadBracket();
+        });
+        act('tn-leave', async d => {
+            const t = tnOf(d.id);
+            if (!t || TN.busy) return;
+            TN.busy = true;
+            renderTournaments();
+            const r = await request('tournament:leave', { id: t.id });
+            TN.busy = false;
+            if (!r.ok) {
+                toast(r.error || 'Could not withdraw', 'bad');
+                renderTournaments();
+                return;
+            }
+            tnApply(r.tournament);
+            toast('You withdrew from ' + t.name, '');
+            renderTournaments();
+            loadBracket();
+        });
         act('queue-cancel', async () => {
             const r = await request('queue:leave');
             if (!r.ok) toast(r.error || 'Could not leave the queue', 'bad');
@@ -8747,6 +9597,7 @@
             S.lobby = null;
             S.queue = null;
             S.invites = [];
+            tnReset();
             renderHome();
             renderQueue();
             openPanel('login');
