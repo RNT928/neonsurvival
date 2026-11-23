@@ -5509,10 +5509,10 @@
                             id="conn-dot"></span><span id="conn-text">Connecting</span></span></div>
                 <form id="conn-form">
                     <div class="field"><label for="conn-url">Server address</label><input id="conn-url"
-                            placeholder="https://your-name.ngrok-free.app" autocomplete="off" spellcheck="false"></div>
+                            placeholder="https://api.neonsurvival.com" autocomplete="off" spellcheck="false"></div>
                     <div class="btn-row">
                         <button class="cta cyan sm" type="submit">Connect</button>
-                        <button class="ghost" type="button" data-act="conn-reset">Use this page's address</button>
+                        <button class="ghost" type="button" data-act="conn-reset">Use default server</button>
                     </div>
                 </form>
                 <p class="hint" style="margin:16px 0 0">When the server runs through ngrok, open the ngrok address in
@@ -6090,6 +6090,8 @@
             shown: false
         };
 
+        const DEFAULT_SERVER_URL = 'https://api.neonsurvival.com';
+
         function normalizeUrl(u) {
             u = String(u || '').trim();
             if (!u) return '';
@@ -6102,8 +6104,9 @@
             if (q) return normalizeUrl(q);
             const sess = store.sget('ns_server');
             if (sess) return normalizeUrl(sess);
-            if (/^https?:$/.test(location.protocol)) return location.origin;
-            return normalizeUrl(store.get('ns_server_saved') || '');
+            const saved = store.get('ns_server_saved');
+            if (saved) return normalizeUrl(saved);
+            return DEFAULT_SERVER_URL;
         }
 
         function loadSocketLib(url) {
@@ -8755,7 +8758,7 @@
         act('conn-reset', () => {
             store.sdel('ns_server');
             store.del('ns_server_saved');
-            $('#conn-url').value = /^https?:$/.test(location.protocol) ? location.origin : '';
+            $('#conn-url').value = DEFAULT_SERVER_URL;
             connectServer();
         });
 
